@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
@@ -9,6 +8,9 @@ public class CarSpawner : MonoBehaviour
     [Header("複数の出現位置")]
     [SerializeField] private Transform[] spawnPoints;
 
+    [Header("道路の右端")]
+    [SerializeField] private Transform roadEdge;
+
     [Header("出現間隔")]
     [SerializeField] private float spawnInterval = 3f;
 
@@ -18,33 +20,39 @@ public class CarSpawner : MonoBehaviour
     {
         if (carPrefabs == null || carPrefabs.Length == 0 ||
             spawnPoints == null || spawnPoints.Length == 0)
-        {
             return;
-        }
 
         timer += Time.deltaTime;
 
         if (timer >= spawnInterval)
         {
             timer -= spawnInterval;
-
-            // 車をランダムに選ぶ
-            int carIndex = Random.Range(0, carPrefabs.Length);
-
-            // スポーンポイントをランダムに選ぶ
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
-
-            GameObject selectedCar = carPrefabs[carIndex];
-            Transform selectedPoint = spawnPoints[spawnIndex];
-
-            if (selectedCar != null && selectedPoint != null)
-            {
-                Instantiate(
-                    selectedCar,
-                    selectedPoint.position,
-                    selectedPoint.rotation
-                );
-            }
+            SpawnCar();
         }
+    }
+
+    private void SpawnCar()
+    {
+        GameObject prefab =
+            carPrefabs[Random.Range(0, carPrefabs.Length)];
+
+        Transform point =
+            spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+        if (prefab == null || point == null)
+            return;
+
+        GameObject car = Instantiate(
+            prefab,
+            point.position,
+            point.rotation
+        );
+
+        CarMover mover = car.GetComponent<CarMover>();
+
+        if (mover == null)
+            mover = car.AddComponent<CarMover>();
+
+        mover.SetRoadEdge(roadEdge);
     }
 }
