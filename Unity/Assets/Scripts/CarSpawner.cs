@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
@@ -48,6 +49,13 @@ public class CarSpawner : MonoBehaviour
             point.rotation
         );
 
+        // 車にゲームオーバー判定を自動追加
+        GameOver gameOver = car.GetComponent<GameOver>();
+
+        if (gameOver == null)
+            car.AddComponent<GameOver>();
+
+        // 既存の車の移動処理
         CarMover mover = car.GetComponent<CarMover>();
 
         if (mover == null)

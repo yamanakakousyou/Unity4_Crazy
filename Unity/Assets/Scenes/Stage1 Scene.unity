@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pig No Root
       objectReference: {fileID: 0}
+    - target: {fileID: 6081896307724654165, guid: 1dace64ff89a8f64aa3f5cbd6731b63f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6858116759732374767, guid: 1dace64ff89a8f64aa3f5cbd6731b63f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -791,6 +795,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 0.20000087, z: 20}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!1 &1016969375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016969376}
+  m_Layer: 0
+  m_Name: CarSpawnPoint8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016969376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016969375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -38.7, y: -0, z: -42.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042996241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1322,7 @@ Transform:
   m_GameObject: {fileID: 1680931590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -159.7, y: -0, z: -45.6}
+  m_LocalPosition: {x: -157.6, y: -0, z: -45.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1621,6 +1656,7 @@ MonoBehaviour:
   - {fileID: 1042996242}
   - {fileID: 1736649324}
   - {fileID: 1882870567}
+  - {fileID: 1016969376}
   roadEdge: {fileID: 1779182553}
   spawnInterval: 2
 --- !u!4 &1880900733
@@ -1745,5 +1781,6 @@ SceneRoots:
   - {fileID: 1042996242}
   - {fileID: 1736649324}
   - {fileID: 1882870567}
+  - {fileID: 1016969376}
   - {fileID: 138312792}
   - {fileID: 1779182553}

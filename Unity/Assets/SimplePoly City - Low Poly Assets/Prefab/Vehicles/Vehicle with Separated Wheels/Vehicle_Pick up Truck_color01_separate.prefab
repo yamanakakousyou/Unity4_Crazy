@@ -460,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400008}
   - component: {fileID: -6731054183592796965}
+  - component: {fileID: 6237406637766815398}
   m_Layer: 0
   m_Name: Vehicle_Pick up Truck_color01_separate
   m_TagString: Untagged
@@ -500,3 +501,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarMover
   moveSpeed: 5
+--- !u!65 &6237406637766815398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100010}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
